@@ -1,0 +1,22 @@
+def find_roots(a, b, c):
+    # Calculate the discriminant
+    discriminant = b**2 - 4*a*c
+    
+    # Calculate the two roots using the quadratic formula
+    root1 = (-b + cmath.sqrt(discriminant)) / (2 * a)
+    root2 = (-b - cmath.sqrt(discriminant)) / (2 * a)
+    
+    return root1, root2
+
+# Input coefficients from the user
+print("Enter the coefficients of the quadratic equation (ax^2 + bx + c = 0):")
+a = float(input("Enter a: "))
+b = float(input("Enter b: "))
+c = float(input("Enter c: "))
+
+# Check if 'a' is zero, which would not be a quadratic equation
+if a == 0:
+    print("The value of 'a' cannot be zero for a quadratic equation.")
+else:
+    root1, root2 = find_roots(a, b, c)
+    print(f"The roots of the equation are: {root1} and {root2}")
